@@ -13,7 +13,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const Area=()=>{
    
      
-    const [value, setValue] = React.useState('');
+    const [optionvalue, setValue] = React.useState([]);
     const [areavalue, setareaValue] = React.useState('');
     const [selectedvalue, setSelectedValue] = React.useState('');
 
@@ -24,7 +24,7 @@ const Area=()=>{
               var data1 = response.json();
               var p = Promise.resolve(data1);
               p.then(function(values) {
-                 setValue(values);
+                 setValue(values.data);
               });
               
              
@@ -41,7 +41,7 @@ const Area=()=>{
               var data1 = response.json();
               var p = Promise.resolve(data1);
               p.then(function(values) {
-                 setareaValue(values);
+                 setareaValue(values.data);
               });
               
              
@@ -136,7 +136,7 @@ const Area=()=>{
             <div className='dropdown'>
             <p>Select Area : 
             <select value={selectedvalue} onChange={handleChange}>
-            {value.data.map((option) => (
+            {value.map((option) => (
               <option value={option.area_name}>{option.area_name}</option>
             ))}
             
