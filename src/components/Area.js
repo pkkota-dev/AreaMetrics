@@ -41,7 +41,7 @@ const Area=()=>{
               var data1 = response.json();
               var p = Promise.resolve(data1);
               p.then(function(values) {
-                 setareaValue(values.data);
+                 setareaValue(values);
               });
               
              
@@ -136,7 +136,7 @@ const Area=()=>{
             <div className='dropdown'>
             <p>Select Area : 
             <select value={selectedvalue} onChange={handleChange}>
-            {value.map((option) => (
+            {optionvalue.map((option) => (
               <option value={option.area_name}>{option.area_name}</option>
             ))}
             
