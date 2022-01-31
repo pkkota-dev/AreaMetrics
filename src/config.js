@@ -1,4 +1,4 @@
 const config={
-    url:"https://trashoutservice.azurewebsites.net",
+    url:"https://trashoutservices.azurewebsites.net",
 };
 module.exports = config;
